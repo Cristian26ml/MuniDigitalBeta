@@ -6,6 +6,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.firestore.FirebaseFirestore;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ResumenResidenciaActivity extends AppCompatActivity {
 
@@ -43,10 +46,38 @@ public class ResumenResidenciaActivity extends AppCompatActivity {
         Toast.makeText(this, "Revisa tu resumen antes de enviar  ", Toast.LENGTH_LONG).show();
 
         btnConfirmar.setOnClickListener(v -> {
-            Toast.makeText(this, "Trámite confirmado y enviado con éxito  ", Toast.LENGTH_LONG).show();
-            // Aquí podrías guardar en Firebase o mostrar comprobante
-            finish(); // Cierra esta pantalla
+            // 1) Crear referencia a Firestore
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+            // 2) Armar el mapa de datos con los campos del formulario
+            Map<String, Object> datos = new HashMap<>();
+            datos.put("nombre", nombre);
+            datos.put("rut", rut);
+            datos.put("direccion", direccion);
+            datos.put("comuna", comuna);
+            datos.put("telefono", telefono);
+            datos.put("motivo", motivo);
+            datos.put("tipo_tramite", "residencia");
+            datos.put("estado", "pendiente");
+            datos.put("timestamp", System.currentTimeMillis());
+
+            // 3) Guardar en la colección "tramites_residencia"
+            db.collection("tramites_residencia")
+                    .add(datos)
+                    .addOnSuccessListener(docRef -> {
+                        Toast.makeText(this, "Solicitud enviada y guardada ✅", Toast.LENGTH_LONG).show();
+
+                        // Redirigir al menú de trámites
+                        Intent intent = new Intent(this, TramitesActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(this, "Error al guardar. Intente nuevamente.", Toast.LENGTH_LONG).show();
+                    });
         });
+
 
         btnEditar.setOnClickListener(v -> {
             Intent intent = new Intent(this, FormularioResidenciaActivity.class);

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/txtNombre" style="@style/ResumenTexto"/>
+        <TextView android:id="@+id/txtRut" style="@style/ResumenTexto"/>
+        <TextView android:id="@+id/txtDireccion" style="@style/ResumenTexto"/>
+        <TextView android:id="@+id/txtComuna" style="@style/ResumenTexto"/>
+        <TextView android:id="@+id/txtTelefono" style="@style/ResumenTexto"/>
+        <TextView android:id="@+id/txtPatente" style="@style/ResumenTexto"/>
+        <TextView android:id="@+id/txtMarca" style="@style/ResumenTexto"/>
+        <TextView android:id="@+id/txtModelo" style="@style/ResumenTexto"/>
+        <TextView android:id="@+id/txtAnio" style="@style/ResumenTexto"/>
+        <TextView android:id="@+id/txtEstado" style="@style/ResumenTexto"/>
+    </LinearLayout>
+</ScrollView>

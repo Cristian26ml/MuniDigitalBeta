@@ -22,12 +22,16 @@
             android:text="¿Cómo ingreso un trámite?\n\n1. Presione 'Trámites'\n2. Ingrese su RUT\n3. Complete el formulario\n4. Revise y confirme"
             android:textSize="18sp"
             android:layout_marginBottom="24dp"
+            android:textColor="#000000"
+            android:textColorHint="#555555"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
             android:text="¿Qué hago si tengo dudas?\n\nPuede llamar al municipio o visitar la sección de contacto."
             android:textSize="18sp"
+            android:textColor="#000000"
+            android:textColorHint="#555555"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

@@ -1,15 +1,25 @@
 package com.crisdev.munidigitalbeta;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ResumenPermisoCirculacionActivity extends AppCompatActivity {
 
-    TextView txtRut, txtPatente, txtMarca, txtModelo, txtAnio, txtTipo, txtFecha;
-    Button btnFinalizar;
+    // Variables para los datos recibidos
+    private String nombre, rut, direccion, comuna, telefono, patente, marca, modelo, anio, tipo, fecha;
+
+    private TextView txtRut, txtPatente, txtMarca, txtModelo, txtAnio, txtTipo, txtFecha;
+    private Button btnFinalizar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +36,21 @@ public class ResumenPermisoCirculacionActivity extends AppCompatActivity {
         txtFecha = findViewById(R.id.txtFecha);
         btnFinalizar = findViewById(R.id.btnFinalizar);
 
-        // Obtener datos del intent
-        String rut = getIntent().getStringExtra("rut");
-        String patente = getIntent().getStringExtra("patente");
-        String marca = getIntent().getStringExtra("marca");
-        String modelo = getIntent().getStringExtra("modelo");
-        String anio = getIntent().getStringExtra("anio");
-        String tipo = getIntent().getStringExtra("tipo");
-        String fecha = getIntent().getStringExtra("fecha");
+        // Recuperar datos desde el Intent
+        Intent intent = getIntent();
+        nombre = intent.getStringExtra("nombre");
+        rut = intent.getStringExtra("rut");
+        direccion = intent.getStringExtra("direccion");
+        comuna = intent.getStringExtra("comuna");
+        telefono = intent.getStringExtra("telefono");
+        patente = intent.getStringExtra("patente");
+        marca = intent.getStringExtra("marca");
+        modelo = intent.getStringExtra("modelo");
+        anio = intent.getStringExtra("anio");
+        tipo = intent.getStringExtra("tipo");
+        fecha = intent.getStringExtra("fecha");
 
-        // Mostrar datos
+        // Mostrar datos en los TextView
         txtRut.setText("RUT: " + rut);
         txtPatente.setText("Patente: " + patente);
         txtMarca.setText("Marca: " + marca);
@@ -44,10 +59,40 @@ public class ResumenPermisoCirculacionActivity extends AppCompatActivity {
         txtTipo.setText("Tipo de vehículo: " + tipo);
         txtFecha.setText("Fecha de vencimiento anterior: " + fecha);
 
-        // Acción del botón
-        btnFinalizar.setOnClickListener(v -> {
-            Toast.makeText(this, "Trámite finalizado correctamente", Toast.LENGTH_LONG).show();
-            finish(); // O puedes redirigir a otra pantalla
-        });
+        // Acción del botón Finalizar
+        btnFinalizar.setOnClickListener(v -> guardarTramite());
+    }
+
+    private void guardarTramite() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Armar el mapa de datos
+        Map<String, Object> datos = new HashMap<>();
+        datos.put("nombre", nombre);
+        datos.put("rut", rut);
+        datos.put("direccion", direccion);
+        datos.put("comuna", comuna);
+        datos.put("telefono", telefono);
+        datos.put("patente", patente);
+        datos.put("marca", marca);
+        datos.put("modelo", modelo);
+        datos.put("anio", anio);
+        datos.put("tipo_tramite", "permiso_circulacion");
+        datos.put("estado", "pendiente");
+        datos.put("timestamp", System.currentTimeMillis());
+
+        // Guardar en Firestore
+        db.collection("tramites_permiso_circulacion")
+                .add(datos)
+                .addOnSuccessListener(docRef -> {
+                    Toast.makeText(this, "Permiso de circulación enviado ✅", Toast.LENGTH_LONG).show();
+                    Intent intentMenu = new Intent(this, TramitesActivity.class);
+                    intentMenu.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intentMenu);
+                    finish();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "Error al guardar. Intente nuevamente.", Toast.LENGTH_LONG).show();
+                });
     }
 }

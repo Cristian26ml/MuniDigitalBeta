@@ -26,10 +26,13 @@
         <activity android:name=".FormularioPermisoCirculacionActivity" />
         <activity android:name=".ResumenResidenciaActivity" />
         <activity android:name=".ResumenPermisoCirculacionActivity" />
+        <activity android:name=".ListaPermisosActivity" />
         <activity android:name=".NoticiasActivity" />
         <activity android:name=".ReportesActivity" />
         <activity android:name=".ContactoActivity" />
         <activity android:name=".AyudaActivity" />
+        <activity android:name=".DetallePermisoActivity" />
+
     </application>
 
 </manifest>

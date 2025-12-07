@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "165739619766",
+    "project_id": "munidigitalbeta",
+    "storage_bucket": "munidigitalbeta.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165739619766:android:b782988c95e2db7e604d17",
+        "android_client_info": {
+          "package_name": "com.crisdev.munidigitalbeta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqFdFL70kV61-oT28-j008Se5aIvcOz74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

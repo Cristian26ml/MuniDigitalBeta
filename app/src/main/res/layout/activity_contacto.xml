@@ -18,6 +18,8 @@
         android:text="Teléfono: +56 92 2 460 100"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"
+        android:textColor="#000000"
+        android:textColorHint="#555555"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -25,12 +27,16 @@
         android:text="Correo: contactomuni@imda.cl"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"
+        android:textColor="#000000"
+        android:textColorHint="#555555"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:text="Dirección: Av. Diego de Almagro 123, Diego de Almagro, Atacama"
         android:textSize="18sp"
+        android:textColor="#000000"
+        android:textColorHint="#555555"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

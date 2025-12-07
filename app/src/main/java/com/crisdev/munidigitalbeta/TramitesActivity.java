@@ -11,6 +11,7 @@ public class TramitesActivity extends AppCompatActivity {
     TextView txtBienvenida;
     Button btnCertificadoResidencia;
     Button btnPermisoCirculacion;
+    Button btnVerPermisos;
     String rut;
 
     @Override
@@ -21,6 +22,7 @@ public class TramitesActivity extends AppCompatActivity {
         txtBienvenida = findViewById(R.id.txtBienvenida);
         btnCertificadoResidencia = findViewById(R.id.btnCertificadoResidencia);
         btnPermisoCirculacion = findViewById(R.id.btnPermisoCirculacion);
+        btnVerPermisos = findViewById(R.id.btnVerPermisos);
 
         rut = getIntent().getStringExtra("rut");
         txtBienvenida.setText("Bienvenido/a. RUT: " + rut + "\nSeleccione un trámite:");
@@ -36,5 +38,11 @@ public class TramitesActivity extends AppCompatActivity {
             intent.putExtra("rut", rut);
             startActivity(intent);
         });
+
+        btnVerPermisos.setOnClickListener(v -> {
+            Intent intent = new Intent(TramitesActivity.this, ListaPermisosActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

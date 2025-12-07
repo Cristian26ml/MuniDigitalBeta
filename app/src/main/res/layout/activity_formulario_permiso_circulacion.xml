@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,75 +6,84 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/txtTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Formulario Permiso de Circulación"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp" />
+        <!-- Datos personales -->
+        <EditText
+            android:id="@+id/etNombre"
+            android:hint="Nombre completo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/editPatente"
+            android:id="@+id/etRut"
+            android:hint="RUT"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Patente del vehículo"
-            android:inputType="text"
-            android:maxLength="10"
-            android:importantForAutofill="no" />
+            android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/editMarca"
+            android:id="@+id/etDireccion"
+            android:hint="Dirección"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etComuna"
+            android:hint="Comuna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:hint="Teléfono"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Datos del vehículo -->
+        <EditText
+            android:id="@+id/etPatente"
+            android:hint="Patente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etMarca"
             android:hint="Marca"
-            android:inputType="textCapWords"
-            android:importantForAutofill="no" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/editModelo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/etModelo"
             android:hint="Modelo"
-            android:inputType="textCapWords"
-            android:importantForAutofill="no" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/editAnio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/etAnio"
             android:hint="Año"
             android:inputType="number"
-            android:maxLength="4"
-            android:importantForAutofill="no" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/editTipo"
+            android:id="@+id/etTipo"
+            android:hint="Tipo de vehículo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tipo de vehículo (auto, moto...)"
-            android:inputType="textCapWords"
-            android:importantForAutofill="no" />
+            android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/editFechaVencimiento"
+            android:id="@+id/etFecha"
+            android:hint="Fecha vencimiento anterior"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Fecha de vencimiento anterior"
-            android:focusable="false"
-            android:clickable="true"
-            android:inputType="none"
-            android:layout_marginBottom="24dp" />
+            android:layout_height="wrap_content"/>
 
+        <!-- Botón para continuar -->
         <Button
             android:id="@+id/btnContinuar"
+            android:text="Continuar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Continuar" />
-
+            android:layout_marginTop="24dp"/>
     </LinearLayout>
 </ScrollView>
