@@ -1,0 +1,67 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#E3F2FD">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txtTituloJuzgado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consultas - Juzgado de Policía Local"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Número de causa -->
+        <EditText
+            android:id="@+id/txtNumeroCausa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número de causa"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:inputType="number"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- RUT del infractor -->
+        <EditText
+            android:id="@+id/txtRutInfractor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="RUT del infractor"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Fecha de infracción -->
+        <EditText
+            android:id="@+id/txtFechaInfraccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:hint="Fecha de infracción (dd/mm/aaaa)"
+            android:inputType="date"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Botón enviar -->
+        <Button
+            android:id="@+id/btnEnviarJuzgado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consultar"
+            android:textSize="20sp"
+            android:backgroundTint="#1976D2"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</ScrollView>

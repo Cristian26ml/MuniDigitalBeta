@@ -1,0 +1,75 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#E3F2FD">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txtTituloPatente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Solicitud/Renovación de Patente Comercial"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Nombre del negocio -->
+        <EditText
+            android:id="@+id/txtNombreNegocio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del negocio"
+            android:textColor="#000000"
+            android:textColorHint="#616161"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- RUT del titular -->
+        <EditText
+            android:id="@+id/txtRutTitular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="RUT del titular"
+            android:textColor="#000000"
+            android:textColorHint="#616161"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Dirección del negocio -->
+        <EditText
+            android:id="@+id/txtDireccionNegocio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección del negocio"
+            android:textColor="#000000"
+            android:textColorHint="#616161"
+            android:inputType="textPostalAddress"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Tipo de patente -->
+        <Spinner
+            android:id="@+id/spinnerTipoPatente"
+            style="@style/CustomSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón enviar -->
+        <Button
+            android:id="@+id/btnEnviarPatente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar solicitud"
+            android:textSize="20sp"
+            android:backgroundTint="#1976D2"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,71 +1,196 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center_horizontal"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#1976D2"
+        android:padding="16dp"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/imgEscudo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/escudo_diego_almagro"
+            android:layout_marginEnd="5dp"/>
 
+            <!-- Título de la app -->
         <TextView
-            android:text="  MuniDigital Beta"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_marginBottom="32dp"
+            android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btnTramites"
-            android:text="  Trámites"
-            android:textSize="22sp"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#1976D2"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/btnNoticias"
-            android:text="  Noticias"
-            android:textSize="22sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#388E3C"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/btnReportes"
-            android:text="  Reportes"
-            android:textSize="22sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#F57C00"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/btnContacto"
-            android:text="  Contacto"
-            android:textSize="22sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#D32F2F"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/btnAyuda"
-            android:text="  Ayuda"
-            android:textSize="22sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#455A64"
-            android:textColor="#FFFFFF" />
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="16dp"
+            android:text="MuniDigitalBeta"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
     </LinearLayout>
-</ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E3F2FD"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <!-- Fila 1: Trámites y Noticias -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/btnTramites"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/btn_square"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="Icono Trámites"
+                    android:src="@drawable/tramites" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TRAMITES"
+                    android:textColor="#212121"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnNoticias"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/btn_square"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="Icono Noticias"
+                    android:src="@drawable/noticias" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="NOTICIAS"
+                    android:textColor="#212121"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Fila 2: Reportes y Contacto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/btnReportes"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/btn_square"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="Icono Reportes"
+                    android:src="@drawable/reportes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="REPORTES"
+                    android:textColor="#212121"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnContacto"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/btn_square"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="Icono Contacto"
+                    android:src="@drawable/contacto" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="CONTACTO"
+                    android:textColor="#212121"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Fila 3: Ayuda -->
+        <LinearLayout
+            android:id="@+id/btnAyuda"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_square"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="Icono Ayuda"
+                android:src="@drawable/ayuda" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="AYUDA"
+                android:textColor="#212121"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

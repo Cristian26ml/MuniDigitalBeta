@@ -1,6 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E3F2FD"
     android:padding="16dp">
 
     <LinearLayout
@@ -12,12 +13,14 @@
         <EditText
             android:id="@+id/etNombre"
             android:hint="Nombre completo"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etRut"
             android:hint="RUT"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -25,11 +28,13 @@
             android:id="@+id/etDireccion"
             android:hint="Dirección"
             android:layout_width="match_parent"
+            android:textColorHint="#616161"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etComuna"
             android:hint="Comuna"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -37,6 +42,7 @@
             android:id="@+id/etTelefono"
             android:hint="Teléfono"
             android:inputType="phone"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -44,18 +50,21 @@
         <EditText
             android:id="@+id/etPatente"
             android:hint="Patente"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etMarca"
             android:hint="Marca"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etModelo"
             android:hint="Modelo"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -63,18 +72,21 @@
             android:id="@+id/etAnio"
             android:hint="Año"
             android:inputType="number"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etTipo"
             android:hint="Tipo de vehículo"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etFecha"
             android:hint="Fecha vencimiento anterior"
+            android:textColorHint="#616161"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -82,6 +94,8 @@
         <Button
             android:id="@+id/btnContinuar"
             android:text="Continuar"
+            android:textSize="20sp"
+            android:backgroundTint="#1976D2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"/>

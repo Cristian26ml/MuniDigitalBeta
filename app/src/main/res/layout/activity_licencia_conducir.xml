@@ -1,0 +1,83 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#E3F2FD">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txtTituloLicencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trámite de Licencia de Conducir"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Nombre -->
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre completo"
+            android:textColor="#000000"
+            android:textColorHint="#616161"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- RUT -->
+        <EditText
+            android:id="@+id/txtRut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="RUT (Ej: 12345678-9)"
+            android:textColor="#000000"
+            android:textColorHint="#616161"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Tipo de trámite -->
+        <Spinner
+            android:id="@+id/spinnerTipoTramite"
+            style="@style/CustomSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Tipo de licencia -->
+        <Spinner
+            android:id="@+id/spinnerTipoLicencia"
+            style="@style/CustomSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Fecha de examen -->
+        <EditText
+            android:id="@+id/txtFechaExamen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textColorHint="#616161"
+            android:hint="Fecha de examen (dd/mm/aaaa)"
+            android:inputType="date"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Botón enviar -->
+        <Button
+            android:id="@+id/btnEnviarLicencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar solicitud"
+            android:textSize="20sp"
+            android:backgroundTint="#1976D2"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</ScrollView>

@@ -26,6 +26,10 @@
         <activity android:name=".FormularioPermisoCirculacionActivity" />
         <activity android:name=".ResumenResidenciaActivity" />
         <activity android:name=".ResumenPermisoCirculacionActivity" />
+        <activity android:name=".LicenciaConducirActivity" />
+        <activity android:name=".CertificadosObrasActivity" />
+        <activity android:name=".JuzgadoPoliciaLocalActivity" />
+        <activity android:name=".PatenteActivity" />
         <activity android:name=".ListaPermisosActivity" />
         <activity android:name=".NoticiasActivity" />
         <activity android:name=".ReportesActivity" />

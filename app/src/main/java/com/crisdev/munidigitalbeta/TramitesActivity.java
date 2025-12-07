@@ -2,16 +2,15 @@ package com.crisdev.munidigitalbeta;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TramitesActivity extends AppCompatActivity {
 
     TextView txtBienvenida;
-    Button btnCertificadoResidencia;
-    Button btnPermisoCirculacion;
-    Button btnVerPermisos;
+    LinearLayout btnResidencia, btnPermisoCirculacion, btnVerCirculacion,
+            btnLicencia, btnPatente, btnObras, btnJuzgado;
     String rut;
 
     @Override
@@ -20,29 +19,23 @@ public class TramitesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tramites);
 
         txtBienvenida = findViewById(R.id.txtBienvenida);
-        btnCertificadoResidencia = findViewById(R.id.btnCertificadoResidencia);
-        btnPermisoCirculacion = findViewById(R.id.btnPermisoCirculacion);
-        btnVerPermisos = findViewById(R.id.btnVerPermisos);
-
         rut = getIntent().getStringExtra("rut");
-        txtBienvenida.setText("Bienvenido/a. RUT: " + rut + "\nSeleccione un trámite:");
+        txtBienvenida.setText("Bienvenido/a a la selección de trámites.\nPor favor, seleccione un trámite:");
 
-        btnCertificadoResidencia.setOnClickListener(v -> {
-            Intent intent = new Intent(this, FormularioResidenciaActivity.class);
-            intent.putExtra("rut", rut);
-            startActivity(intent);
-        });
+        btnResidencia = findViewById(R.id.btnResidencia);
+        btnPermisoCirculacion = findViewById(R.id.btnPermisoCirculacion);
+        btnVerCirculacion = findViewById(R.id.btnVerCirculacion);
+        btnLicencia = findViewById(R.id.btnLicencia);
+        btnPatente = findViewById(R.id.btnPatente);
+        btnObras = findViewById(R.id.btnObras);
+        btnJuzgado = findViewById(R.id.btnJuzgado);
 
-        btnPermisoCirculacion.setOnClickListener(v -> {
-            Intent intent = new Intent(this, FormularioPermisoCirculacionActivity.class);
-            intent.putExtra("rut", rut);
-            startActivity(intent);
-        });
-
-        btnVerPermisos.setOnClickListener(v -> {
-            Intent intent = new Intent(TramitesActivity.this, ListaPermisosActivity.class);
-            startActivity(intent);
-        });
-
+        btnResidencia.setOnClickListener(v -> startActivity(new Intent(this, FormularioResidenciaActivity.class)));
+        btnPermisoCirculacion.setOnClickListener(v -> startActivity(new Intent(this, FormularioPermisoCirculacionActivity.class)));
+        btnVerCirculacion.setOnClickListener(v -> startActivity(new Intent(this, ListaPermisosActivity.class)));
+        btnLicencia.setOnClickListener(v -> startActivity(new Intent(this, LicenciaConducirActivity.class)));
+        btnPatente.setOnClickListener(v -> startActivity(new Intent(this, PatenteActivity.class)));
+        btnObras.setOnClickListener(v -> startActivity(new Intent(this, CertificadosObrasActivity.class)));
+        btnJuzgado.setOnClickListener(v -> startActivity(new Intent(this, JuzgadoPoliciaLocalActivity.class)));
     }
 }

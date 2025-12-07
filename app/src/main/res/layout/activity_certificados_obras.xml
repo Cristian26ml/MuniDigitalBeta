@@ -1,0 +1,67 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#E3F2FD">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Título -->
+
+        <!-- Dirección de la obra -->
+        <TextView
+            android:id="@+id/txtTituloObras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="Solicitud de Certificados de Obras Municipales"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtDireccionObra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección de la obra"
+            android:textColor="#000000"
+            android:textColorHint="#616161"
+            android:inputType="textPostalAddress"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Tipo de certificado -->
+        <Spinner
+            android:id="@+id/spinnerTipoCertificado"
+            style="@style/CustomSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Observaciones -->
+        <EditText
+            android:id="@+id/txtObservaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Observaciones adicionales"
+            android:textColor="#000000"
+            android:textColorHint="#616161"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:gravity="top"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Botón enviar -->
+        <Button
+            android:id="@+id/btnEnviarObras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar solicitud"
+            android:textSize="20sp"
+            android:backgroundTint="#1976D2"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</ScrollView>
