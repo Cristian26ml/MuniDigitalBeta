@@ -47,5 +47,11 @@ public class PatenteActivity extends AppCompatActivity {
                             "Tipo de patente: " + tipoPatente,
                     Toast.LENGTH_LONG).show();
         });
+
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
+        });
     }
 }

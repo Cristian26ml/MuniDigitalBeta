@@ -3,6 +3,7 @@ package com.crisdev.munidigitalbeta;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +17,6 @@ public class DetallePermisoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_permiso);
 
-        // Enlazar vistas
         txtNombre = findViewById(R.id.txtNombre);
         txtRut = findViewById(R.id.txtRut);
         txtDireccion = findViewById(R.id.txtDireccion);
@@ -28,7 +28,6 @@ public class DetallePermisoActivity extends AppCompatActivity {
         txtAnio = findViewById(R.id.txtAnio);
         txtEstado = findViewById(R.id.txtEstado);
 
-        // Recuperar datos del Intent
         Intent intent = getIntent();
         txtNombre.setText("Nombre: " + intent.getStringExtra("nombre"));
         txtRut.setText("RUT: " + intent.getStringExtra("rut"));
@@ -40,5 +39,11 @@ public class DetallePermisoActivity extends AppCompatActivity {
         txtModelo.setText("Modelo: " + intent.getStringExtra("modelo"));
         txtAnio.setText("Año: " + intent.getStringExtra("anio"));
         txtEstado.setText("Estado: " + intent.getStringExtra("estado"));
+
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
+        });
     }
 }

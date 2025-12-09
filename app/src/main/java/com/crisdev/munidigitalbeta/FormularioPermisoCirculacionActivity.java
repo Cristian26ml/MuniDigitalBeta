@@ -33,9 +33,9 @@ public class FormularioPermisoCirculacionActivity extends AppCompatActivity {
 
         btnContinuar = findViewById(R.id.btnContinuar);
 
-        // Acción del botón
+
         btnContinuar.setOnClickListener(v -> {
-            // Capturar valores de los EditText
+
             String nombre = etNombre.getText().toString();
             String rut = etRut.getText().toString();
             String direccion = etDireccion.getText().toString();
@@ -48,7 +48,6 @@ public class FormularioPermisoCirculacionActivity extends AppCompatActivity {
             String tipo = etTipo.getText().toString();
             String fecha = etFecha.getText().toString();
 
-            // Enviar datos al ResumenPermisoCirculacionActivity
             Intent intent = new Intent(FormularioPermisoCirculacionActivity.this, ResumenPermisoCirculacionActivity.class);
             intent.putExtra("nombre", nombre);
             intent.putExtra("rut", rut);
@@ -63,6 +62,11 @@ public class FormularioPermisoCirculacionActivity extends AppCompatActivity {
             intent.putExtra("fecha", fecha);
 
             startActivity(intent);
+        });
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
         });
     }
 }

@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#E3F2FD">
+    android:background="#EEEEEE">
 
     <LinearLayout
         android:orientation="vertical"
@@ -76,8 +76,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enviar solicitud"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:backgroundTint="#1976D2"
             android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:backgroundTint="#1976D2"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 </ScrollView>

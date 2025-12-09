@@ -44,5 +44,11 @@ public class CertificadosObrasActivity extends AppCompatActivity {
                             "Observaciones: " + observaciones,
                     Toast.LENGTH_LONG).show();
         });
+
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
+        });
     }
 }

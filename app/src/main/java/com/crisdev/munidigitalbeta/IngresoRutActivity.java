@@ -24,17 +24,19 @@ public class IngresoRutActivity extends AppCompatActivity {
         btnIngresar.setOnClickListener(v -> {
             String rut = editRut.getText().toString().trim();
 
-            // Validación con expresión regular
             if (rut.matches("^\\d{7,8}-[\\dkK]$")) {
-                // Si el RUT es válido, pasa a TramitesActivity
                 Intent intent = new Intent(this, TramitesActivity.class);
                 intent.putExtra("rut", rut);
                 startActivity(intent);
                 finish();
             } else {
-                // Si el RUT no cumple el formato, muestra error
                 Toast.makeText(this, "RUT inválido. Ejemplo: 12345678-9", Toast.LENGTH_LONG).show();
             }
+        });
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
         });
     }
 }

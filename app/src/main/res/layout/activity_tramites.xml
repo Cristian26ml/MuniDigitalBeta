@@ -9,9 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
+        android:backgroundTint="#EEEEEE"
         android:gravity="center">
 
-        <!-- Texto de bienvenida -->
         <TextView
             android:id="@+id/txtBienvenida"
             android:layout_width="match_parent"
@@ -23,7 +23,6 @@
             android:gravity="center"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Fila 1: Residencia + Permiso de Circulación -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,7 +85,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Fila 2: Ver trámites de Circulación + Licencias de Conducir -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -149,7 +147,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Fila 3: Patentes + Obras Municipales -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -212,7 +209,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Fila 4: Juzgado de Policía Local (centrado) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -246,6 +242,14 @@
                     android:gravity="center"/>
             </LinearLayout>
         </LinearLayout>
-
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:backgroundTint="#1976D2"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 </ScrollView>

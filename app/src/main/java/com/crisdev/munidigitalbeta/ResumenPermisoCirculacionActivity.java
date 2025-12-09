@@ -26,7 +26,6 @@ public class ResumenPermisoCirculacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumen_permiso_circulacion);
 
-        // Enlazar vistas
         txtRut = findViewById(R.id.txtRut);
         txtPatente = findViewById(R.id.txtPatente);
         txtMarca = findViewById(R.id.txtMarca);
@@ -36,7 +35,6 @@ public class ResumenPermisoCirculacionActivity extends AppCompatActivity {
         txtFecha = findViewById(R.id.txtFecha);
         btnFinalizar = findViewById(R.id.btnFinalizar);
 
-        // Recuperar datos desde el Intent
         Intent intent = getIntent();
         nombre = intent.getStringExtra("nombre");
         rut = intent.getStringExtra("rut");
@@ -50,7 +48,6 @@ public class ResumenPermisoCirculacionActivity extends AppCompatActivity {
         tipo = intent.getStringExtra("tipo");
         fecha = intent.getStringExtra("fecha");
 
-        // Mostrar datos en los TextView
         txtRut.setText("RUT: " + rut);
         txtPatente.setText("Patente: " + patente);
         txtMarca.setText("Marca: " + marca);
@@ -59,14 +56,18 @@ public class ResumenPermisoCirculacionActivity extends AppCompatActivity {
         txtTipo.setText("Tipo de vehículo: " + tipo);
         txtFecha.setText("Fecha de vencimiento anterior: " + fecha);
 
-        // Acción del botón Finalizar
         btnFinalizar.setOnClickListener(v -> guardarTramite());
+
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     private void guardarTramite() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        // Armar el mapa de datos
         Map<String, Object> datos = new HashMap<>();
         datos.put("nombre", nombre);
         datos.put("rut", rut);

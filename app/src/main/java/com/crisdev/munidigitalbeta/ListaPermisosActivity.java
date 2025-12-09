@@ -1,6 +1,5 @@
 package com.crisdev.munidigitalbeta;
 
-
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +9,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.List;
+import android.widget.Button;
 
 public class ListaPermisosActivity extends AppCompatActivity {
 
@@ -30,7 +30,6 @@ public class ListaPermisosActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
-        // Consulta: trámites pendientes
         db.collection("tramites_permiso_circulacion")
                 .whereEqualTo("estado", "pendiente")
                 .get()
@@ -45,5 +44,10 @@ public class ListaPermisosActivity extends AppCompatActivity {
                 .addOnFailureListener(e -> {
                     Toast.makeText(this, "Error al cargar trámites", Toast.LENGTH_SHORT).show();
                 });
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
+        });
     }
 }

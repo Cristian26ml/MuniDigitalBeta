@@ -34,5 +34,10 @@ public class JuzgadoPoliciaLocalActivity extends AppCompatActivity {
                             "Fecha: " + fecha,
                     Toast.LENGTH_LONG).show();
         });
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
+        });
     }
 }

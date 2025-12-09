@@ -46,10 +46,9 @@ public class ResumenResidenciaActivity extends AppCompatActivity {
         Toast.makeText(this, "Revisa tu resumen antes de enviar  ", Toast.LENGTH_LONG).show();
 
         btnConfirmar.setOnClickListener(v -> {
-            // 1) Crear referencia a Firestore
+
             FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-            // 2) Armar el mapa de datos con los campos del formulario
             Map<String, Object> datos = new HashMap<>();
             datos.put("nombre", nombre);
             datos.put("rut", rut);
@@ -61,13 +60,11 @@ public class ResumenResidenciaActivity extends AppCompatActivity {
             datos.put("estado", "pendiente");
             datos.put("timestamp", System.currentTimeMillis());
 
-            // 3) Guardar en la colección "tramites_residencia"
             db.collection("tramites_residencia")
                     .add(datos)
                     .addOnSuccessListener(docRef -> {
                         Toast.makeText(this, "Solicitud enviada y guardada ✅", Toast.LENGTH_LONG).show();
 
-                        // Redirigir al menú de trámites
                         Intent intent = new Intent(this, TramitesActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
@@ -88,7 +85,12 @@ public class ResumenResidenciaActivity extends AppCompatActivity {
             intent.putExtra("telefono", telefono);
             intent.putExtra("motivo", motivo);
             startActivity(intent);
-            finish(); // Cierra esta pantalla para evitar duplicados
+            finish();
+        });
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
         });
     }
 }

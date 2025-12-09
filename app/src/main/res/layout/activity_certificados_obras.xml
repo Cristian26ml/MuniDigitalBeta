@@ -2,16 +2,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#E3F2FD">
+    android:background="#EEEEEE">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Título -->
-
-        <!-- Dirección de la obra -->
         <TextView
             android:id="@+id/txtTituloObras"
             android:layout_width="match_parent"
@@ -33,7 +30,6 @@
             android:inputType="textPostalAddress"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Tipo de certificado -->
         <Spinner
             android:id="@+id/spinnerTipoCertificado"
             style="@style/CustomSpinner"
@@ -41,7 +37,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Observaciones -->
         <EditText
             android:id="@+id/txtObservaciones"
             android:layout_width="match_parent"
@@ -54,14 +49,23 @@
             android:gravity="top"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Botón enviar -->
         <Button
             android:id="@+id/btnEnviarObras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enviar solicitud"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:backgroundTint="#1976D2"
             android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:backgroundTint="#1976D2"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 </ScrollView>

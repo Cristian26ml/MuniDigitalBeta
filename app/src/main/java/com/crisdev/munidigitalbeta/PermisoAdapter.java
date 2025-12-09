@@ -27,17 +27,14 @@ public class PermisoAdapter extends RecyclerView.Adapter<PermisoAdapter.ViewHold
     public void onBindViewHolder(ViewHolder holder, int position) {
         PermisoCirculacion permiso = lista.get(position);
 
-        // Mostrar datos básicos
         holder.txtPatente.setText("Patente: " + permiso.getPatente());
         holder.txtMarcaModelo.setText("Vehículo: " + permiso.getMarca() + " " + permiso.getModelo());
         holder.txtEstado.setText("Estado: " + permiso.getEstado());
 
-        // Acción al tocar el ítem
         holder.itemView.setOnClickListener(v -> {
             Context context = v.getContext();
             Intent intent = new Intent(context, DetallePermisoActivity.class);
 
-            // Pasar todos los datos al detalle
             intent.putExtra("nombre", permiso.getNombre());
             intent.putExtra("rut", permiso.getRut());
             intent.putExtra("direccion", permiso.getDireccion());
@@ -52,7 +49,6 @@ public class PermisoAdapter extends RecyclerView.Adapter<PermisoAdapter.ViewHold
             context.startActivity(intent);
         });
     }
-
 
     @Override
     public int getItemCount() {

@@ -2,14 +2,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#E3F2FD">
+    android:background="#EEEEEE">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Título -->
         <TextView
             android:id="@+id/txtTituloPatente"
             android:layout_width="match_parent"
@@ -21,7 +20,6 @@
             android:gravity="center"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Nombre del negocio -->
         <EditText
             android:id="@+id/txtNombreNegocio"
             android:layout_width="match_parent"
@@ -32,7 +30,6 @@
             android:inputType="text"
             android:layout_marginBottom="16dp"/>
 
-        <!-- RUT del titular -->
         <EditText
             android:id="@+id/txtRutTitular"
             android:layout_width="match_parent"
@@ -43,7 +40,6 @@
             android:inputType="text"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Dirección del negocio -->
         <EditText
             android:id="@+id/txtDireccionNegocio"
             android:layout_width="match_parent"
@@ -54,7 +50,6 @@
             android:inputType="textPostalAddress"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Tipo de patente -->
         <Spinner
             android:id="@+id/spinnerTipoPatente"
             style="@style/CustomSpinner"
@@ -62,14 +57,23 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Botón enviar -->
         <Button
             android:id="@+id/btnEnviarPatente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enviar solicitud"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:backgroundTint="#1976D2"
             android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:textSize="22sp"
+            android:backgroundTint="#1976D2"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 </ScrollView>

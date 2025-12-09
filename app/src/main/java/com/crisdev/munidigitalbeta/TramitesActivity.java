@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Button;
 
 public class TramitesActivity extends AppCompatActivity {
 
@@ -37,5 +38,8 @@ public class TramitesActivity extends AppCompatActivity {
         btnPatente.setOnClickListener(v -> startActivity(new Intent(this, PatenteActivity.class)));
         btnObras.setOnClickListener(v -> startActivity(new Intent(this, CertificadosObrasActivity.class)));
         btnJuzgado.setOnClickListener(v -> startActivity(new Intent(this, JuzgadoPoliciaLocalActivity.class)));
+
+        Button btnVolver = findViewById(R.id.btnVolver);
+        btnVolver.setOnClickListener(v -> finish());
     }
 }

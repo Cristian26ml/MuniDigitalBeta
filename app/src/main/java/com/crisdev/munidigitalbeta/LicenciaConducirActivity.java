@@ -28,14 +28,12 @@ public class LicenciaConducirActivity extends AppCompatActivity {
         spinnerTipoLicencia = findViewById(R.id.spinnerTipoLicencia);
         btnEnviarLicencia = findViewById(R.id.btnEnviarLicencia);
 
-        // Opciones para tipo de trámite
         ArrayAdapter<String> adapterTramite = new ArrayAdapter<>(this,
                 R.layout.spinner_item,
                 new String[]{"Nueva licencia", "Renovación", "Duplicado"});
         adapterTramite.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTipoTramite.setAdapter(adapterTramite);
 
-        // Opciones para tipo de licencia
         ArrayAdapter<String> adapterLicencia = new ArrayAdapter<>(this,
                 R.layout.spinner_item,
                 new String[]{"Clase B (autos)", "Clase C (motos)", "Clase A (profesional)"});
@@ -57,6 +55,11 @@ public class LicenciaConducirActivity extends AppCompatActivity {
                             "Licencia: " + licencia + "\n" +
                             "Fecha examen: " + fecha,
                     Toast.LENGTH_LONG).show();
+        });
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
         });
     }
 }

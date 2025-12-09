@@ -2,7 +2,8 @@ package com.crisdev.munidigitalbeta;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.LinearLayout; // 👈 usamos LinearLayout en vez de Button
+import android.widget.LinearLayout;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,5 +31,11 @@ public class MainActivity extends AppCompatActivity {
         btnReportes.setOnClickListener(v -> startActivity(new Intent(this, ReportesActivity.class)));
         btnContacto.setOnClickListener(v -> startActivity(new Intent(this, ContactoActivity.class)));
         btnAyuda.setOnClickListener(v -> startActivity(new Intent(this, AyudaActivity.class)));
+
+        Button btnVolver = findViewById(R.id.btnVolver);
+
+        btnVolver.setOnClickListener(v -> {
+            finish();
+        });
     }
 }
